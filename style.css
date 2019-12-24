@@ -1,0 +1,213 @@
+html body{
+  /* background-color: rgb(41, 41, 41); */
+  font-family: 'Gilroy', sans-serif;
+
+}
+
+.board123{
+    position: relative;
+    /* background-color: aquamarine; */
+    top: 100px;
+    /* width: 100vw; 
+    height: 70vh; */
+}
+
+#board{
+    /* width: 90%; */
+    position: relative;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw; 
+    height: 70vh;
+}
+
+#board td {
+    position: relative;
+    cursor: pointer;
+    /* width: 20px;
+    height: 20px; */
+    /* width: 33.33%; */
+}
+
+#board td:after {
+    content: '';
+    margin-top: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(41, 49, 56);
+  /* background-color: rgb(255, 143, 178) */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  margin: 10px 10px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  /* padding: 14px 30px; */
+  text-decoration: none;
+}
+
+li a:hover {
+  border-radius: 8px;
+  background-color: rgb(22, 31, 36);
+}
+
+#search{
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: 18px;
+  border: none;
+  /* background-color: rgb(41, 49, 56); */
+  /* background-color: rgb(144, 211, 255); */
+  background-color: rgb(186,62,76);
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: left;
+  margin: 10px 10px;
+
+}
+
+
+#search:hover {
+  box-shadow: 0 30px 50px 0 rgb(0, 0, 0), 0 30px 50px 0 rgb(0, 0, 0);
+}
+
+
+.unvisited {
+    border: 1px solid black;
+}
+
+.open-set {
+    /* background-color: aquamarine; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: visitedStartNodePurpleAnimation;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    border: 1px solid black;
+}
+
+.optimal-path {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: OptimalPath;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  border: 1px solid black;
+}
+
+.wall {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: Wall;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  border: 1px solid black;
+}
+
+@keyframes visitedStartNodePurpleAnimation {
+    0% {
+      transform: scale(.3);
+      background-color: rgba(41, 4, 24, 0.75);
+      border-radius: 100%;
+    }
+  
+    50% {
+      background-color: rgba(97, 0, 20, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.3);
+      background-color: rgba(216, 5, 141, 0.75);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      /* background-color: rgba(178, 67, 255, 0.75); */
+      background-color: rgb(255, 3, 79);
+    }
+  }
+
+ 
+  
+@keyframes OptimalPath {
+  0% {
+    transform: scale(.3);
+    background-color: rgba(41, 4, 24, 0.75);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: rgba(97, 0, 20, 0.75);
+  }
+
+  75% {
+    transform: scale(1.3);
+    background-color: rgba(216, 5, 141, 0.75);
+  }
+
+  90% {
+    transform: scale(1.0);
+    background-color: rgb(3, 184, 255);
+  }
+
+  100% {
+    transform: scale(1.0);
+    /* background-color: rgba(178, 67, 255, 0.75); */
+    background-color: rgb(3, 255, 150);
+  }
+}
+
+@keyframes Wall {
+  /* 0% {
+    transform: scale(.3);
+    background-color: rgba(41, 4, 24, 0.75);
+  }
+
+  50% {
+    background-color: rgba(97, 0, 20, 0.75);
+  } */
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgba(6, 1, 32, 0.75);
+  }
+
+  100% {
+    transform: scale(1.0);
+    /* background-color: rgba(178, 67, 255, 0.75); */
+    background-color: rgb(11, 1, 48);
+  }
+}
